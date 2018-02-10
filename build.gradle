@@ -1,0 +1,20 @@
+apply plugin: 'groovy'
+apply plugin: 'codenarc'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.10'
+}
+
+codenarc {
+    toolVersion = '1.0'
+    configFile = new File(projectDir, 'config/codenarc/rules.groovy')
+
+    maxPriority1Violations = 0
+    maxPriority2Violations = 0
+    maxPriority3Violations = 0
+}
+
